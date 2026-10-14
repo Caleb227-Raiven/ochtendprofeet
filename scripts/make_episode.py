@@ -23,10 +23,10 @@ AUDIO_DIR = ROOT / "docs" / "audio"
 # Fixed voices per host (Microsoft neural voices via edge-tts). Fallbacks in order.
 VOICES = {
     "NINA": ["nl-NL-FennaNeural", "nl-BE-DenaNeural"],
-    "MIRTHE": ["nl-NL-ColetteNeural", "nl-BE-DenaNeural"],
+    "MIRTHE": ["en-US-AvaMultilingualNeural", "nl-NL-ColetteNeural"],
 }
 # speech rate per host (edge-tts format)
-RATES = {"NINA": "+5%", "MIRTHE": "+5%"}
+RATES = {"NINA": "+5%", "MIRTHE": "+0%"}
 ALIASES = {"MAUD": "NINA", "STERRE": "MIRTHE"}  # older scripts
 LINE_RE = re.compile(r"^\s*\**\s*(NINA|MIRTHE|MAUD|STERRE)\s*\**\s*:\s*(.+?)\s*$", re.IGNORECASE)
 
