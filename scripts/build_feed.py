@@ -20,7 +20,7 @@ KEEP = 30
 
 SHOW_TITLE = "De Ochtendprofeet"
 SHOW_DESC = ("Elke werkdag een gesprek van maximaal 20 minuten over AI, marketing-technologie, "
-             "data, CRM en softwareontwikkeling, met Maud en Sterre.")
+             "data, CRM en softwareontwikkeling, met Nina en Mirthe.")
 
 
 def base_url() -> str:

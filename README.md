@@ -1,6 +1,6 @@
 # De Ochtendprofeet
 
-Een dagelijkse Nederlandstalige podcast (max. 20 minuten) over AI, marketing-technologie, data/CRM en softwareontwikkeling, gepresenteerd door Maud en Sterre.
+Een dagelijkse Nederlandstalige podcast (max. 20 minuten) over AI, marketing-technologie, data/CRM en softwareontwikkeling, gepresenteerd door Nina en Mirthe.
 
 ## Hoe het werkt
 

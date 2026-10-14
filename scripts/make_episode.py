@@ -2,8 +2,8 @@
 """Turn an episode script (episodes/YYYY-MM-DD.md) into an MP3 in docs/audio/.
 
 Script lines look like:
-    MAUD: Goedemorgen!
-    STERRE: Goeiemorgen, Maud.
+    NINA: Goedemorgen!
+    MIRTHE: Goeiemorgen, Nina.
 Everything else in the file (front matter, headings, sources) is ignored for audio.
 
 Usage: python scripts/make_episode.py episodes/2026-10-15.md
@@ -22,10 +22,13 @@ AUDIO_DIR = ROOT / "docs" / "audio"
 
 # Fixed voices per host (Microsoft neural voices via edge-tts). Fallbacks in order.
 VOICES = {
-    "MAUD": ["nl-NL-FennaNeural", "nl-BE-DenaNeural"],
-    "STERRE": ["nl-NL-ColetteNeural", "nl-BE-DenaNeural"],
+    "NINA": ["nl-NL-FennaNeural", "nl-BE-DenaNeural"],
+    "MIRTHE": ["nl-NL-ColetteNeural", "nl-BE-DenaNeural"],
 }
-LINE_RE = re.compile(r"^\s*\**\s*(MAUD|STERRE)\s*\**\s*:\s*(.+?)\s*$", re.IGNORECASE)
+# speech rate per host (edge-tts format)
+RATES = {"NINA": "+5%", "MIRTHE": "+5%"}
+ALIASES = {"MAUD": "NINA", "STERRE": "MIRTHE"}  # older scripts
+LINE_RE = re.compile(r"^\s*\**\s*(NINA|MIRTHE|MAUD|STERRE)\s*\**\s*:\s*(.+?)\s*$", re.IGNORECASE)
 
 
 def parse_lines(text: str):
@@ -34,6 +37,7 @@ def parse_lines(text: str):
         m = LINE_RE.match(raw)
         if m:
             speaker = m.group(1).upper()
+            speaker = ALIASES.get(speaker, speaker)
             # strip markdown emphasis and stage directions in (brackets) or [brackets]
             said = re.sub(r"[\*_`]", "", m.group(2))
             said = re.sub(r"\([^)]*\)|\[[^\]]*\]", "", said)
@@ -45,7 +49,7 @@ def parse_lines(text: str):
 
 async def tts_line(text: str, speaker: str, out: Path):
     if os.environ.get("FAKE_TTS") == "1":
-        freq = 440 if speaker == "MAUD" else 660
+        freq = 440 if speaker == "NINA" else 660
         dur = max(0.5, len(text) / 15)  # rough speaking time
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i",
                         f"sine=frequency={freq}:duration={dur}", "-ar", "24000", "-ac", "1",
@@ -56,7 +60,7 @@ async def tts_line(text: str, speaker: str, out: Path):
     for voice in VOICES[speaker]:
         for attempt in range(3):
             try:
-                await edge_tts.Communicate(text, voice, rate="+5%").save(str(out))
+                await edge_tts.Communicate(text, voice, rate=RATES[speaker]).save(str(out))
                 if out.exists() and out.stat().st_size > 0:
                     return
             except Exception as e:  # network hiccup or voice missing
@@ -68,7 +72,7 @@ async def tts_line(text: str, speaker: str, out: Path):
 async def build(script_path: Path) -> Path:
     lines = parse_lines(script_path.read_text(encoding="utf-8"))
     if not lines:
-        sys.exit(f"No MAUD:/STERRE: lines found in {script_path}")
+        sys.exit(f"No NINA:/MIRTHE: lines found in {script_path}")
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     out_mp3 = AUDIO_DIR / (script_path.stem + ".mp3")
 
