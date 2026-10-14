@@ -1,0 +1,17 @@
+de-DE-FlorianMultilingualNeural  Male
+de-DE-SeraphinaMultilingualNeural  Female
+en-AU-WilliamMultilingualNeural  Male
+en-US-AndrewMultilingualNeural  Male
+en-US-AvaMultilingualNeural  Female
+en-US-BrianMultilingualNeural  Male
+en-US-EmmaMultilingualNeural  Female
+fr-FR-RemyMultilingualNeural  Male
+fr-FR-VivienneMultilingualNeural  Female
+it-IT-GiuseppeMultilingualNeural  Male
+ko-KR-HyunsuMultilingualNeural  Male
+nl-BE-ArnaudNeural  Male
+nl-BE-DenaNeural  Female
+nl-NL-ColetteNeural  Female
+nl-NL-FennaNeural  Female
+nl-NL-MaartenNeural  Male
+pt-BR-ThalitaMultilingualNeural  Female
