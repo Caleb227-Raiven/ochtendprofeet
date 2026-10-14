@@ -1,0 +1,51 @@
+name: Maak podcastaflevering
+
+on:
+  push:
+    branches: [main]
+    paths: ["episodes/**.md"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast
+  cancel-in-progress: false
+
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q edge-tts
+
+      - name: Make audio for new scripts
+        run: |
+          shopt -s nullglob
+          for md in episodes/*.md; do
+            name=$(basename "$md" .md)
+            [[ "$md" == *README* ]] && continue
+            if [ ! -f "docs/audio/$name.mp3" ]; then
+              python scripts/make_episode.py "$md"
+            fi
+          done
+
+      - name: Build podcast feed
+        run: python scripts/build_feed.py
+
+      - name: Commit audio and feed
+        run: |
+          git config user.name "podcast-bot"
+          git config user.email "podcast-bot@users.noreply.github.com"
+          git add -A docs
+          git diff --cached --quiet || git commit -m "Nieuwe aflevering" && git push
