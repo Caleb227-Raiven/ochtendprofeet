@@ -89,7 +89,7 @@ def main():
     <description>{escape(SHOW_DESC)}</description>
     <itunes:summary>{escape(SHOW_DESC)}</itunes:summary>
     <itunes:author>{SHOW_TITLE}</itunes:author>
-    <itunes:image href="{base}cover.png"/>
+    <itunes:image href="{base}cover.jpg"/>
     <itunes:category text="Technology"/>
     <itunes:type>episodic</itunes:type>
     <itunes:explicit>false</itunes:explicit>
