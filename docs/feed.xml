@@ -9,8 +9,8 @@
     <itunes:author>De Ochtendprofeet</itunes:author>
     <itunes:image href="https://caleb227-raiven.github.io/ochtendprofeet/cover.png"/>
     <itunes:category text="Technology"/>
+    <itunes:type>episodic</itunes:type>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:block>Yes</itunes:block>
     <item>
       <title>Woensdag 14 oktober – Testaflevering: maak kennis met Nina en Mirthe</title>
       <description>Een korte testaflevering om de stemmen en de podcastfeed te controleren.</description>

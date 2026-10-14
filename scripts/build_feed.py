@@ -91,8 +91,8 @@ def main():
     <itunes:author>{SHOW_TITLE}</itunes:author>
     <itunes:image href="{base}cover.png"/>
     <itunes:category text="Technology"/>
+    <itunes:type>episodic</itunes:type>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:block>Yes</itunes:block>
 {chr(10).join(items)}
   </channel>
 </rss>
