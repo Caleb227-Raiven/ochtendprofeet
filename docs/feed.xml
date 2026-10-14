@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>De Ochtendprofeet</title>
-    <link>https://Caleb227-Raiven.github.io/ochtendprofeet/</link>
+    <link>https://caleb227-raiven.github.io/ochtendprofeet/</link>
     <language>nl</language>
-    <description>Elke werkdag een gesprek van maximaal 20 minuten over AI, marketing-technologie, data, CRM en softwareontwikkeling, met Maud en Sterre.</description>
-    <itunes:summary>Elke werkdag een gesprek van maximaal 20 minuten over AI, marketing-technologie, data, CRM en softwareontwikkeling, met Maud en Sterre.</itunes:summary>
+    <description>Elke werkdag een gesprek van maximaal 20 minuten over AI, marketing-technologie, data, CRM en softwareontwikkeling, met Nina en Mirthe.</description>
+    <itunes:summary>Elke werkdag een gesprek van maximaal 20 minuten over AI, marketing-technologie, data, CRM en softwareontwikkeling, met Nina en Mirthe.</itunes:summary>
     <itunes:author>De Ochtendprofeet</itunes:author>
-    <itunes:image href="https://Caleb227-Raiven.github.io/ochtendprofeet/cover.png"/>
+    <itunes:image href="https://caleb227-raiven.github.io/ochtendprofeet/cover.png"/>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <item>
-      <title>Woensdag 14 oktober – Testaflevering: maak kennis met Maud en Sterre</title>
+      <title>Woensdag 14 oktober – Testaflevering: maak kennis met Nina en Mirthe</title>
       <description>Een korte testaflevering om de stemmen en de podcastfeed te controleren.</description>
       <itunes:summary>Een korte testaflevering om de stemmen en de podcastfeed te controleren.</itunes:summary>
-      <enclosure url="https://Caleb227-Raiven.github.io/ochtendprofeet/audio/2026-10-14.mp3" length="797301" type="audio/mpeg"/>
+      <enclosure url="https://caleb227-raiven.github.io/ochtendprofeet/audio/2026-10-14.mp3" length="722695" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-10-14</guid>
       <pubDate>Wed, 14 Oct 2026 06:00:00 +0000</pubDate>
-      <itunes:duration>99</itunes:duration>
+      <itunes:duration>90</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
   </channel>
