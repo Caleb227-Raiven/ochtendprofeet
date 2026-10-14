@@ -27,7 +27,7 @@ def base_url() -> str:
     if os.environ.get("PODCAST_BASE_URL"):
         return os.environ["PODCAST_BASE_URL"].rstrip("/") + "/"
     owner, repo = os.environ.get("GITHUB_REPOSITORY", "owner/repo").split("/")
-    return f"https://{owner}.github.io/{repo}/"
+    return f"https://{owner.lower()}.github.io/{repo}/"
 
 
 def front_matter(md: Path) -> dict:
