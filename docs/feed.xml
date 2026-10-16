@@ -22,9 +22,19 @@
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
-      <title>Woensdag 14 oktober – Testaflevering: maak kennis met Nina en Mirthe</title>
-      <description>Een korte testaflevering om de stemmen en de podcastfeed te controleren.</description>
-      <itunes:summary>Een korte testaflevering om de stemmen en de podcastfeed te controleren.</itunes:summary>
+      <title>Donderdag 15 oktober – Software- en webontwikkeling: Wie schrijft de code als de agent het doet?</title>
+      <description>Gemini 4 Argon en Meta Muse Wonder strijden om de ontwikkelaar, Epic Games schrapt handgeschreven code en Next.js en SvelteKit leveren updates. Plus twee kleine open-sourceprojecten en wat dit betekent voor bureaus en dealers.</description>
+      <itunes:summary>Gemini 4 Argon en Meta Muse Wonder strijden om de ontwikkelaar, Epic Games schrapt handgeschreven code en Next.js en SvelteKit leveren updates. Plus twee kleine open-sourceprojecten en wat dit betekent voor bureaus en dealers.</itunes:summary>
+      <enclosure url="https://caleb227-raiven.github.io/ochtendprofeet/audio/2026-10-15.mp3" length="7481095" type="audio/mpeg"/>
+      <guid isPermaLink="false">2026-10-15</guid>
+      <pubDate>Thu, 15 Oct 2026 06:00:00 +0000</pubDate>
+      <itunes:duration>935</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Aflevering 2026-10-14</title>
+      <description></description>
+      <itunes:summary></itunes:summary>
       <enclosure url="https://caleb227-raiven.github.io/ochtendprofeet/audio/2026-10-14.mp3" length="722695" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-10-14</guid>
       <pubDate>Wed, 14 Oct 2026 06:00:00 +0000</pubDate>
